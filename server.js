@@ -64,15 +64,7 @@ app.post("/api/contacts", function(req, res) {
     if (err) {
       handleError(res, err.message, "Failed to create new contact.");
     } else {
-      {
-  "_id": <ObjectId>,
-  "name": <string>,
-  "email": <string>,
-  "phone": {
-    "mobile": <string>,
-    "work": <string>
-  }
-}
+      res.status(201).json(doc.ops[0]);
     }
   });
 });
